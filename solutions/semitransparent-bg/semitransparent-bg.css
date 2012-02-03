@@ -1,0 +1,44 @@
+table{border-collapse:collapse;border-spacing:0;position:absolute;}
+table td{border:1px dotted #b3b3b3;padding:30px;vertical-align:top;}
+table th{text-align:left;}
+p{color:#eee;}
+table p{color:#333}
+a{color:#080;text-decoration:none;border-bottom:1px dotted #b3b3b3;line-height:60px;}
+
+.box{padding:10px;width:300px;}
+.cnt{border:1px solid #aaa;padding:15px;background:#fff;}
+
+
+/* 一、使用 Opacity + 透明滤镜  */
+.opacity{
+    background:#000;
+    opacity:0.3;
+    filter: alpha(opacity=30);
+}
+
+
+/* 二、使用 rgba + 渐变滤镜 */
+.rgba, .contrast{
+    background:rgba(0, 0, 0, 0.3);
+    filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#4c000000', EndColorStr='#4c000000');
+}
+
+/* IE9 支持 filter 的对比 */
+:root .rgba{
+    filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#00000000', EndColorStr='#00000000');
+}
+
+.contrast, .contrast-filter{display:none;}
+:root .contrast, :root .contrast-filter{
+    display: block\9;
+    color:#fff;
+    width:300px;padding:10px;
+}
+:root .contrast-filter{
+    background: #000;
+    filter: alpha(opacity=30)
+}
+
+
+/* 默认情况 */
+.normal{background:#000;}
